@@ -73,6 +73,8 @@ $(document).ready(function () {
     }
 
     // ---
+
+    /*
     var resetLabel = $("<label>");
     var resetInput = $("<input>");
     resetInput.attr({
@@ -88,18 +90,18 @@ $(document).ready(function () {
 
     // ---
 
-    var toggle = 'enable';
-    resetEl.click(function () {
-        if (toggle === 'disable') {
-            toggle = 'enable';
-        } else {
-            toggle = 'disable';
-            if (now == 0) {
-                localStorage.clear();
+        var toggle = 'enable';
+        resetEl.click(function () {
+            if (toggle === 'disable') {
+                toggle = 'enable';
+            } else {
+                toggle = 'disable';
+                if (now == 0) {
+                    localStorage.clear();
+                }
             }
-        }
-    });
-
+        });
+    */
 
 
 
