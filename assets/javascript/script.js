@@ -59,47 +59,22 @@ $(document).ready(function () {
 
     //---
 
-
-    /*
-    .past = gray
-    .present = red
-    .future = green
-    */
-
-
-    function hourSet() {
-        let hourBlock = 8
-        var now = 8
-        // var now = moment().hour();
-        for (let a = 0; a < numHours; a++) {
-            if (hourBlock === now) {
-                $("#form" + a).addClass("present")
-            } else if (hourBlock < now) {
-                $("#form" + a).addClass("past")
-            } else {
-                $("#form" + a).addClass("future")
-            }
-            hourBlock++;
+    let hourBlock = 8
+    var now = moment().hour();
+    for (let a = 0; a < numHours; a++) {
+        if (hourBlock === now) {
+            $("#form" + a).addClass("present")
+        } else if (hourBlock < now) {
+            $("#form" + a).addClass("past")
+        } else {
+            $("#form" + a).addClass("future")
         }
-
-
-        // when now = 0 localStorage.clear();
-
-
-
-
-
-
-
-
-
-
-
-
+        hourBlock++;
     }
 
-    hourSet();
-
+    if (now == 0) {
+        localStorage.clear();
+    }
 
     // ---
 
