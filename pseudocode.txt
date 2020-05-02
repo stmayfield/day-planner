@@ -1,0 +1,42 @@
+Criteria:
+
+Open the planner, the current day is displayed at the top of the calendar
+When scroll down, timeblocks for standard business hours
+When the timeblocks for that day are viewed, each timeblock is color coded to indicate whether it is in the past, present, or future
+When click into a timeblock, I can enter an event
+When click the save button for that timeblock, the text for that event is saved in local storage
+When refresh the page, saved events persist
+
+
+Pseudocode:
+
+
+Generate DOM Elements w/ jQuery for each date heading and hour of the day
+    heading
+    - time and date
+
+    body
+    - hour blocks
+    - enter data blocks
+    - save data blocks
+
+    row
+
+
+Assign date to heading from moment.js
+
+Able to enter text into data block and click "save" to save to localStorage
+    - Text entry from
+    - event click
+    - Add to localStorage
+
+data blocks
+    - set current time to var
+    - assign relative date and hour to block
+    - if block time hour is less than current time , mark gray
+    - if block time hour is equal to current time hour, green
+    - if block time greater than current, mark yellow
+    - parse date into JSON string, compare, convert backto js?
+
+
+
