@@ -72,14 +72,33 @@ $(document).ready(function () {
         hourBlock++;
     }
 
-    if (now == 0) {
-        localStorage.clear();
-    }
+    // ---
+    var resetLabel = $("<label>");
+    var resetInput = $("<input>");
+    resetInput.attr({
+        type: "checkbox",
+        id: "toggle-reset"
+    })
+    resetLabel.text("Enable Midnight Reset")
+    var resetEl = resetLabel.append(resetInput);
+    var div2 = $("#save").append($("<div>"))
+    div2.attr("id", "div2");
+    div2.addClass("Row");
+    div2.append(resetEl)
 
     // ---
 
-
-
+    var toggle = 'enable';
+    resetEl.click(function () {
+        if (toggle === 'disable') {
+            toggle = 'enable';
+        } else {
+            toggle = 'disable';
+            if (now == 0) {
+                localStorage.clear();
+            }
+        }
+    });
 
 
 
