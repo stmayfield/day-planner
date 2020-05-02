@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
     //---
 
-    var numHours = document.querySelector("#hour").childElementCount;
+    var numHours = (document.querySelector("#hour").childElementCount) - 1;
     for (let i = 0; i < numHours; i++) {
         var breakLine = $("<br>");
         var userText = $("<input>");
@@ -29,8 +29,6 @@ $(document).ready(function () {
         $("#event").append(breakLine);
         $("#event").append(userText);
         saveData(JSON.stringify(i));
-        var hourBlock = i + 8;
-        console.log(hourBlock);
     };
     //---
 
@@ -61,8 +59,6 @@ $(document).ready(function () {
 
     //---
 
-    //assign time to id = i; if certain time, 
-
 
     /*
     .past = gray
@@ -71,23 +67,52 @@ $(document).ready(function () {
     */
 
 
-    var hour = 21
-    var now = moment().hour();
-
-    console.log(hour);
-    console.log(now);
-
-    /*
-        var currentTime = moment()
-        var eightTime = JSON.parse(moment("8", "hh")._i);
-        if (17 < currentTime) {
-            $("#form1").css("background-color", "red")
+    function hourSet() {
+        let hourBlock = 8
+        var now = 8
+        // var now = moment().hour();
+        for (let a = 0; a < numHours; a++) {
+            if (hourBlock === now) {
+                $("#form" + a).addClass("present")
+            } else if (hourBlock < now) {
+                $("#form" + a).addClass("past")
+            } else {
+                $("#form" + a).addClass("future")
+            }
+            hourBlock++;
         }
-    
-    */
 
 
-    console.log(hour === now);
+        // when now = 0 localStorage.clear();
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    hourSet();
+
+
+    // ---
+
+
+
+
+
+
+
+
+
+
+
 
 
 
